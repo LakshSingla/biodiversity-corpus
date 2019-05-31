@@ -1,1 +1,5 @@
 virtualenv/
+*.sqlite3
+*.swp
+*.pyc
+.vscode/
