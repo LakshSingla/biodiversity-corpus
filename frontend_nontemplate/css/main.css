@@ -11,8 +11,15 @@ html, body {
     width: 100%;
 }
 
+body {
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
 #main-container, #main-container-inner {
     width: 100%;
+    height: 100%;
     margin-bottom: 0 !important;
 }
 
@@ -21,8 +28,9 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
-#main-content {
-    background: red;
+#map {
+    height: 100%;
 }

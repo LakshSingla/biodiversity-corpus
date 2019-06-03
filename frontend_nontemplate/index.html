@@ -10,33 +10,29 @@
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Corpus</a>
-                <ul class="right hide-on-med-and-down">
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Corpus</a>
+            <ul class="right hide-on-med-and-down">
+                <a class="waves-effect waves-light btn">
+                    <i class="material-icons left modal-trigger" href="#modal1">edit</i>Modify</a>
+            </ul>
+        </div>
+    </nav>
 
     <div class="container" id="main-container">
-
-
         <div class="row" id="main-container-inner">
             <div class="row col s3" id="main-sidenav">
                 <div class="input-field col s12">
-                    <select>
-                        <!-- <option value="" disabled selected>Main Category</option> -->
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                    <select id="main-category-select">
+                        <option value="flora" selected>Flora</option>
+                        <option value="fauna">Fauna</option>
+                        <option value="hills">Hills</option>
                     </select>
                     <label>Main Category</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s12" id="subcategory-select-outer">
                     <select>
-                        <!-- <option value="" disabled selected>Sub Category</option> -->
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
@@ -44,23 +40,45 @@
                     <label>Sub Category</label>
                 </div>
                 <div class="input-field col s12">
-                    <input type="text" class="datepicker" placeholder="Start Date">
+                    <input type="text" class="datepicker" placeholder="Clear for default">
                     <label>Starting Date</label>
                 </div>
                 <div class="input-field col s12">
-                    <input type="text" class="datepicker" placeholder="Start Date">
+                    <input type="text" class="datepicker" placeholder="Clear for default">
                     <label>Ending Date</label>
                 </div>
+                <div class="input-field col s12">
+                    <select multiple>
+                        <option value="1" selected>Twitter</i>
+                        </option>
+                        <option value="2">Twitter</i>
+                        </option>
+                        <option value="3">Twitter</i>
+                        </option>
+                    </select>
+                    <label>APIs to query</label>
+                </div>
+
                 <a class="waves-effect waves-light btn">Search</a>
             </div>
-            <div class="col s8" id="main-content">
+            <div class="col s9" id="map">
 
             </div>
         </div>
     </div>
 
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Modify Modal</h4>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUrM4reXIG5A8GoZEPrKnPuGYIV0Do7dk&region=IN"></script>
     <script type="text/javascript" src="vendors/materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
 </body>
 
 </html>
