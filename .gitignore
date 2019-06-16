@@ -3,3 +3,4 @@ virtualenv/
 *.swp
 *.pyc
 .vscode/
+corpus/tweets/twitter_authentication.py

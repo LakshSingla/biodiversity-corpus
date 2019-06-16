@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('plotter/', include('plotter.urls')),
+    path('tweets/', include('tweets.urls')),
     path('admin/', admin.site.urls),
 ]

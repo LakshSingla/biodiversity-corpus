@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'db.apps.DbConfig',
     'frontend.apps.FrontendConfig',
+    'tweets.apps.TweetsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
