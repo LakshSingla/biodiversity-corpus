@@ -7,6 +7,7 @@ import time
 import csv
 import random
 import pprint
+from analyse_tweets import get_tweet_sentiment
 
 consumer_key = "vPMhh55Wf2mGyUWoQZrOP1YWu"
 consumer_secret = "Dooskx16LcJek2UqnaCLFQzJdgJSNTmf5Bv4sn8zFgXz2Htzmr"
@@ -59,7 +60,6 @@ class StdOutListener(StreamListener):
     # XY = [(Box[0][0] + Box[2][0])/2, (Box[0][1] + Box[2][1])/2]
     # print "X: ", XY[0]
     # print "Y: ", XY[1]
-    pass
     # Comment out next 4 lines to avoid MySQLdb to simply read stream at console
     # curr.execute("""INSERT INTO TwitterFeed2 (UserID, Date, Lat, Lng, Text) VALUES
     # (%s, %s, %s, %s, %s);""",
@@ -76,10 +76,12 @@ def main():
     auth.set_access_token(access_token, access_token_secret)
     stream = Stream(auth, l, timeout=30.0)
     api = tweepy.API(auth)
-    query='jammu'
-    max_tweets = 1000
+    query='forest fire'
+    max_tweets = 20
     searched_tweets = [status for status in tweepy.Cursor(api.search, q=query).items(max_tweets)]
-    print(searched_tweets)
+    for tweet in searched_tweets:
+        print(tweet.text)
+        print(get_tweet_sentiment(tweet.text))
     print(len(searched_tweets))
     # Only records 'locations' OR 'tracks', NOT 'tracks (keywords) with locations'
     # while True:
