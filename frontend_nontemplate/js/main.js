@@ -1,5 +1,6 @@
 const mainCategorySelectElem = document.getElementById('main-category-select');
 const subCategorySelectOuterElem = document.getElementById('subcategory-select-outer');
+const searchBtn = document.getElementById('search-btn');
 
 let g_map;          //Global variable for map
 let g_codebird;     //Global variable for CodeBird
@@ -48,12 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
     g_map = initMap();
 
     g_codebird = setupCodebird();
+});
+
+mainCategorySelectElem.addEventListener('change', populateSubcategorySelect);
+searchBtn.addEventListener('click', () => {
     g_codebird.__call('search_tweets', {
         q: getSubCategoryValue()
     }, result => {
         console.log(result)
     })
 
-});
-
-mainCategorySelectElem.addEventListener('change', populateSubcategorySelect);
+})
