@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="vendors/materialize/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/main.css" media="screen,projection" />
+    <title>Corpus</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Corpus</a>
+            <ul class="right hide-on-med-and-down">
+                <a class="waves-effect waves-light btn">
+                    <i class="material-icons left modal-trigger" href="#modal1">edit</i>Modify</a>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" id="main-container">
+        <div class="row" id="main-container-inner">
+            <div class="row col s3" id="main-sidenav">
+                <div class="input-field col s12">
+                    <select id="main-category-select">
+                        <option value="flora" selected>Flora</option>
+                        <option value="fauna">Fauna</option>
+                        <option value="hills">Hills</option>
+                        <option value="hills">Calamity</option>
+                    </select>
+                    <label>Main Category</label>
+                </div>
+                <div class="input-field col s12" id="subcategory-select-outer">
+                    <select>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <label>Sub Category</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" class="datepicker" placeholder="Clear for default">
+                    <label>Starting Date</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" class="datepicker" placeholder="Clear for default">
+                    <label>Ending Date</label>
+                </div>
+                <div class="input-field col s12">
+                    <select multiple>
+                        <option value="1" selected>Twitter</i>
+                        </option>
+                        <option value="2">Twitter</i>
+                        </option>
+                        <option value="3">Twitter</i>
+                        </option>
+                    </select>
+                    <label>APIs to query</label>
+                </div>
+
+                <a class="waves-effect waves-light btn" id="search-btn">Search</a>
+            </div>
+            <div class="col s9" id="map">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Modify Modal</h4>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+    <script>
+        const TWITTER_API_KEY = 'vPMhh55Wf2mGyUWoQZrOP1YWu'
+        const TWITTER_SECRET_KEY = 'Dooskx16LcJek2UqnaCLFQzJdgJSNTmf5Bv4sn8zFgXz2Htzmr'
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUrM4reXIG5A8GoZEPrKnPuGYIV0Do7dk&libraries=visualization&region=IN"></script>
+    <script type="text/javascript" src="vendors/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="vendors/codebird.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/twitter.js"></script>
+</body>
+
+</html>
