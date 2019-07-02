@@ -34,3 +34,7 @@ body {
 #map {
     height: 100%;
 }
+
+#analytics-btn {
+    margin-top: 5px;
+}

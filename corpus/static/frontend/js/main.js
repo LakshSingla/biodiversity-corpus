@@ -1,4 +1,3 @@
-console.log('working?')
 const mainCategorySelectElem = document.getElementById('main-category-select');
 const mainCategorySelectOuterElem = document.getElementById('main-category-select-outer');
 const subCategorySelectOuterElem = document.getElementById('subcategory-select-outer');
@@ -60,6 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
     elems = document.querySelectorAll('.modal');
     let modalInstances = M.Modal.init(elems, {});
 
+    elems = document.querySelectorAll('.tabs');
+    let tabInstances = M.Tabs.init(elems, {});
+
     // populateCategorySelect();
     // populateSubcategorySelect();
 
@@ -92,7 +94,7 @@ document.getElementById('add-category-btn').addEventListener('click', () => {
         body: JSON.stringify({
             category_name: newCategory
         })
-    }).then(() => ({})).then(console.log).catch(console.log)
+    }).then(data => data.json()).then(console.log).catch(console.log)
 })
 
 document.getElementById('add-subcategory-btn').addEventListener('click', () => {
@@ -104,6 +106,6 @@ document.getElementById('add-subcategory-btn').addEventListener('click', () => {
             category_name: category,
             subcategory_name: newSubcategory
         })
-    }).then(() => ({})).then(console.log).catch(console.log)
-
+    }).then(data => data.json()).then(console.log).catch(console.log)
 })
+
