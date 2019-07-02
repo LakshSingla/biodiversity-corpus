@@ -14,8 +14,10 @@
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">Corpus</a>
             <ul class="right hide-on-med-and-down">
-                <a class="waves-effect waves-light btn">
-                    <i class="material-icons left modal-trigger" href="#modal1">edit</i>Modify</a>
+                <li>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">
+                        <i class="material-icons left">edit</i>Modify</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -24,20 +26,11 @@
         <div class="row" id="main-container-inner">
             <div class="row col s3" id="main-sidenav">
                 <div class="input-field col s12" id="main-category-select-outer">
-                    <select id="main-category-select">
-                        <!-- <option value="flora" selected>Flora</option> -->
-                        <!-- <option value="fauna">Fauna</option> -->
-                        <!-- <option value="hills">Hills</option> -->
-                        <!-- <option value="hills">Calamity</option> -->
-                    </select>
+                    <select id="main-category-select"></select>
                     <label>Main Category</label>
                 </div>
                 <div class="input-field col s12" id="subcategory-select-outer">
-                    <select>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
+                    <select></select>
                     <label>Sub Category</label>
                 </div>
                 <div class="input-field col s12">
@@ -71,9 +64,30 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>Modify Modal</h4>
+            <div class="row valign-wrapper">
+                <h6>Add Category</h6>
+                <div class="input-field col s8">
+                    <input id="add-category-input" type="text" class="validate">
+                    <label for="add-category-input">Category Name</label>
+                </div>
+                <a class="waves-effect waves-light btn col s4" id="add-category-btn">
+                    <i class="material-icons left">cloud</i>Add Category
+                </a>
+            </div>
+            <div class="divider"></div>
+            <div class="row valign-wrapper">
+                <h6>Add Subcategory</h6>
+                <div class="input-field col s8">
+                    <input id="addSubcategoryInput" type="text" class="validate">
+                    <label for="addSubcategoryInput">Subcategory Name</label>
+                </div>
+                <a class="waves-effect waves-light btn col s4" style="font-size: 11.5px">
+                    <i class="material-icons left">cloud</i>Add Subcategory
+                </a>
+            </div>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
     <script>

@@ -1,3 +1,4 @@
+console.log('working?')
 const mainCategorySelectElem = document.getElementById('main-category-select');
 const mainCategorySelectOuterElem = document.getElementById('main-category-select-outer');
 const subCategorySelectOuterElem = document.getElementById('subcategory-select-outer');
@@ -63,10 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // populateSubcategorySelect();
 
     fetch('/db/categories').then(data => data.json()).then(data => {
-        console.log(data)
         mapping = data;
         populateCategorySelect();
-        populateSubCategorySelect();
+        populateSubcategorySelect();
     })
 
     g_map = initMap();
@@ -82,4 +82,15 @@ searchBtn.addEventListener('click', () => {
         console.log(result)
     })
 
+})
+
+document.getElementById('add-category-btn').addEventListener('click', () => {
+    const newCategory = document.getElementById('add-category-input').value;
+    console.log(newCategory)
+    fetch('/db/categories/', {
+        method: "POST",
+        body: JSON.stringify({
+            category_name: newCategory
+        })
+    }).then(() => ({})).then(console.log).catch(console.log)
 })
