@@ -94,3 +94,16 @@ document.getElementById('add-category-btn').addEventListener('click', () => {
         })
     }).then(() => ({})).then(console.log).catch(console.log)
 })
+
+document.getElementById('add-subcategory-btn').addEventListener('click', () => {
+    const category = document.getElementById('add-cat-subcategory-input').value;
+    const newSubcategory = document.getElementById('add-subcategory-input').value;
+    fetch('/db/subcategories/', {
+        method: "POST",
+        body: JSON.stringify({
+            category_name: category,
+            subcategory_name: newSubcategory
+        })
+    }).then(() => ({})).then(console.log).catch(console.log)
+
+})
