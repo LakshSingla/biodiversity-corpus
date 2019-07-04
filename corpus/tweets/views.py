@@ -21,8 +21,8 @@ def tweets(request, keyword):
     if request.method == 'GET':
         max_tweets = 1000
         searched_tweets = [status._json for status in tweepy.Cursor(
-            api.search, q=f"{keyword} -filter:retweets", lang='en').items(max_tweets)]
-            # api.search, q=f"{keyword} -filter:retweets", lang='en', geocode=f'{lat},{lon},{rad}km').items(max_tweets)]
+            api.search, q=f"{keyword} -filter:retweets", lang='en', geocode=f'{lat},{lon},{rad}km').items(max_tweets)]
+            # api.search, q=f"{keyword} -filter:retweets", lang='en').items(max_tweets)]
         
         pos, neg, neut = 0, 0, 0
 
