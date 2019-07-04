@@ -29,7 +29,7 @@ def tweets(request, keyword):
         for tweet in searched_tweets:
             # print(tweet['created_at'])
             sentiment = get_tweet_sentiment(tweet['text'])
-            get_location(tweet['text'])
+            # get_location(tweet['text'])
             if sentiment == 'positive': pos += 1
             elif sentiment == 'negative': neg += 1
             elif sentiment == 'neutral': neut += 1
@@ -38,8 +38,10 @@ def tweets(request, keyword):
             'tweets': [
                 {
                     'text': clean_tweet(tweet['text']),
+                    'date': tweet['created_at'],
                     # 'location': get_location(tweet['text']),
-                    'sentiment': get_tweet_sentiment(tweet['text'])
+                    'sentiment': get_tweet_sentiment(tweet['text']),
+                    'location': get_location(tweet['text'])
                 } for tweet in searched_tweets],
             
             'analysis': {

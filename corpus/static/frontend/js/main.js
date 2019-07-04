@@ -9,7 +9,7 @@ let g_codebird;     //Global variable for CodeBird
 let mapping = {};
 
 const getMainCategoryValue = () => mainCategorySelectOuterElem.querySelector('select').value;
-const getSubCategoryValue = () => subCategorySelectElem.value;
+const getSubCategoryValue = () => subCategorySelectOuterElem.querySelector('select').value;
 
 const populateCategorySelect = () => {
     const _mainCategorySelectElem = mainCategorySelectOuterElem.querySelectorAll('.select-wrapper');
@@ -94,7 +94,9 @@ document.getElementById('add-category-btn').addEventListener('click', () => {
         body: JSON.stringify({
             category_name: newCategory
         })
-    }).then(data => data.json()).then(console.log).catch(console.log)
+    }).then(data => data.json()).then(data => {
+        window.location.reload();
+    }).catch(console.log)
 })
 
 document.getElementById('add-subcategory-btn').addEventListener('click', () => {
@@ -106,6 +108,18 @@ document.getElementById('add-subcategory-btn').addEventListener('click', () => {
             category_name: category,
             subcategory_name: newSubcategory
         })
-    }).then(data => data.json()).then(console.log).catch(console.log)
+    }).then(data => data.json()).then(data => {
+        window.location.reload();
+    }).catch(console.log)
 })
 
+document.getElementById('search-btn').addEventListener('click', () => {
+    fetch(`/tweets/${getSubCategoryValue()}/`).then(data => data.json()).then(data => {
+        console.log(data)
+        data.tweets.forEach(tweet => {
+            if(!tweet.location) return
+            const point = new google.maps.LatLng(tweet.location[0] + Math.random() * 2, tweet.location[1] + Math.random() * 2);
+            heatmap = new google.maps.visualization.HeatmapLayer({data: [point], map: g_map})
+        });
+    })
+})

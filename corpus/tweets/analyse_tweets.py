@@ -46,4 +46,5 @@ def get_location(tweet):
                 # pass
                 print(tweet)
                 print(f"{entity.text} - {location.latitude}, {location.longitude}")
+                return [location.latitude, location.longitude]
     return location
