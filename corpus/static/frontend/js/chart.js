@@ -50,7 +50,7 @@ const timeseries = new Chart(ctx, {
             label: 'Sentiments',
             borderColor: 'rgb(255, 99, 132)',
             fill: false,
-            data: [2, 10, 5, 5, 5, 6, 5, 3, 5, 3, 10, 2]
+            data: [2, 3, 5, 5, 5, 6, 5, 3, 5, 3, 1, 2]
         }]
     },
 

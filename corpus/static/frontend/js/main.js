@@ -118,7 +118,7 @@ document.getElementById('search-btn').addEventListener('click', () => {
         console.log(data)
         data.tweets.forEach(tweet => {
             if(!tweet.location) return
-            const point = new google.maps.LatLng(tweet.location[0] + Math.random() * 2, tweet.location[1] + Math.random() * 2);
+            const point = new google.maps.LatLng(tweet.location[0] + (Math.random() - 0.5) * 2, tweet.location[1] + (Math.random() - 0.5) * 2);
             heatmap = new google.maps.visualization.HeatmapLayer({data: [point], map: g_map})
         });
     })
