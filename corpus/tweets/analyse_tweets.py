@@ -30,7 +30,7 @@ def get_tweet_sentiment(tweet):
 def get_location(tweet):
     cleaned_tweet = clean_tweet(tweet)
     geolocator = Nominatim(user_agent="test")
-    # google_geolocator = GoogleV3(api_key='AIzaSyDUrM4reXIG5A8GoZEPrKnPuGYIV0Do7dk')
+    # geolocator = GoogleV3(api_key='AIzaSyDUrM4reXIG5A8GoZEPrKnPuGYIV0Do7dk')
     sp = spacy.load('en_core_web_sm') 
     sen = sp(cleaned_tweet)
     location = None

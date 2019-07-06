@@ -77,14 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // mainCategorySelectElem.addEventListener('change', populateSubcategorySelect);
-searchBtn.addEventListener('click', () => {
+/*searchBtn.addEventListener('click', () => {
     g_codebird.__call('search_tweets', {
         q: getSubCategoryValue()
     }, result => {
         console.log(result)
     })
 
-})
+})*/
 
 document.getElementById('add-category-btn').addEventListener('click', () => {
     const newCategory = document.getElementById('add-category-input').value;
