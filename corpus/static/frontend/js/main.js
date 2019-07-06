@@ -116,6 +116,11 @@ document.getElementById('add-subcategory-btn').addEventListener('click', () => {
 document.getElementById('search-btn').addEventListener('click', () => {
     fetch(`/tweets/${getSubCategoryValue()}/`).then(data => data.json()).then(data => {
         console.log(data)
+        const {positive, negative, neutral} = data.analysis.sentiment;
+        try{
+        sentimentChart.data.datasets[0].data = [positive, negative, neutral];
+        sentimentChart.update();
+        }catch(e){}
         data.tweets.forEach(tweet => {
             if(!tweet.location) return
             const point = new google.maps.LatLng(tweet.location[0] + (Math.random() - 0.5) * 2, tweet.location[1] + (Math.random() - 0.5) * 2);
